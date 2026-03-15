@@ -49,3 +49,65 @@ th { background: #f9f9f9; color: #555; }
 .modal-content h2 { margin-bottom: 15px; }
 .modal-content input, .modal-content select { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 6px; outline: none;}
 .modal-actions { display: flex; justify-content: flex-end; }
+
+/* =========================================
+   RESPONSIVE DESIGN (HP & TABLET)
+   ========================================= */
+
+@media screen and (max-width: 768px) {
+    /* 1. Ubah Layout Utama jadi Atas-Bawah */
+    .app-container { 
+        flex-direction: column; 
+        overflow-y: auto;
+    }
+
+    /* 2. Pindahkan Sidebar ke Atas */
+    .sidebar { 
+        width: 100%; 
+        border-right: none; 
+        border-bottom: 1px solid #e1e4e8; 
+        padding: 15px 20px; 
+        display: flex; 
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .logo { margin-bottom: 0; text-align: center; }
+    .sidebar nav { 
+        display: flex; 
+        width: 100%; 
+        gap: 10px; 
+    }
+    .nav-btn { 
+        margin-bottom: 0; 
+        text-align: center; 
+        flex: 1; 
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    /* 3. Sesuaikan Jarak Konten */
+    .main-content { padding: 15px; overflow-y: visible; }
+
+    /* 4. Tumpuk Kartu & Grafik */
+    .summary-cards { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+    .dashboard-grid { grid-template-columns: 1fr; }
+
+    /* 5. Rapikan Toolbar & Header Orderan */
+    .order-header { flex-direction: column; align-items: flex-start; gap: 15px; }
+    .order-header .btn-primary { width: 100%; }
+    .toolbar { flex-direction: column; gap: 10px; padding: 15px;}
+    .toolbar input, .toolbar select { width: 100%; }
+
+    /* 6. Bikin Tabel Bisa Di-Swipe ke Samping */
+    .table-container { overflow-x: auto; padding: 0; border: none;}
+    table { min-width: 600px; /* Biar tabel gak gepeng */ }
+
+    /* 7. Sesuaikan Ukuran Pop-up */
+    .modal-content { width: 90%; padding: 20px; }
+}
+
+/* KHUSUS LAYAR HP YANG SANGAT KECIL */
+@media screen and (max-width: 480px) {
+    .summary-cards { grid-template-columns: 1fr; /* Jadi 1 kolom lurus ke bawah */ }
+}
