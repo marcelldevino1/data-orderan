@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - neth</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <h2 class="logo">neth.</h2>
+            <nav>
+                <a href="index.html" class="nav-btn active" style="text-decoration:none;">Dashboard</a>
+                <a href="orderan.html" class="nav-btn" style="text-decoration:none;">Data Orderan</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <section id="view-dashboard">
+                <header><h1>Dashboard Overview</h1></header>
+                
+                <div class="summary-cards">
+                    <div class="card"><h3>Total Order</h3><h2 id="tot-order">0</h2></div>
+                    <div class="card"><h3>Selesai</h3><h2 id="tot-selesai">0</h2></div>
+                    <div class="card"><h3>Proses/Pending</h3><h2 id="tot-proses">0</h2></div>
+                    <div class="card"><h3>Cancel</h3><h2 id="tot-cancel">0</h2></div>
+                </div>
+
+                <div class="chart-container card">
+    <h3>Grafik Orderan Bulanan</h3>
+    <div style="position: relative; height: 300px; width: 100%;">
+        <canvas id="orderChart"></canvas>
+    </div>
+</div>
+                    <div class="reminder-board card">
+                        <h3>Reminder & Update Terbaru</h3>
+                        <ul id="reminder-list">
+                            <li>Loading updates...</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
